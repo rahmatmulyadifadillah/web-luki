@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knotté | Handmade with Warmth</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cart Sidebar -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Keranjang Saya</h3>
+            <button id="closeCart" class="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div id="cartItems" class="cart-items">
+            <!-- Items will be injected here -->
+            <div class="empty-cart-msg">Keranjang masih kosong...</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">Rp0</span>
+            </div>
+            <button id="checkoutBtn" class="btn btn-primary checkout-btn" onclick="checkoutCart()">
+                Pesan Sekarang via WA <i class="fa-brands fa-whatsapp"></i>
+            </button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6287801005291?text=Halo%20Knott%C3%A9%2C%20saya%20ingin%20menanyakan%20koleksi%20aksesoris%20terbaru." 
+       target="_blank" rel="noopener noreferrer" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">
+                <img src="/logo.jpeg" alt="Knotté Logo">
+                <span>Knotté</span>
+            </a>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="active">Beranda</a>
+                <a href="#gelang">Gelang</a>
+                <a href="#ganci">Ganci</a>
+                <a href="#custom">Custom</a>
+                <a href="#about">Tentang</a>
+            </div>
+
+            <div class="nav-actions">
+                <a href="https://instagram.com/luxe.alesttri/" target="_blank" class="nav-icon-link ig-color" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/6287801005291" target="_blank" class="nav-icon-link wa-color" title="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <button class="cart-btn" id="cartToggle">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Buat Aksesoris <br><span class="script-text">handmade with warmth</span></h1>
+                <p>Gelang handmade aesthetic dan gantungan kunci lucu dengan desain feminin dan warna yang cantik.</p>
+                <div class="hero-btns">
+                    <a href="#gelang" class="btn btn-primary">Belanja Sekarang</a>
+                    <a href="#custom" class="btn btn-secondary">Custom</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="logo-card">
+                    <img src="/logo.jpeg" alt="Knotté Brand Logo">
+                    <div class="badge-float">
+                        <span class="number">100%</span>
+                        <span class="label">Handmade Love</span>
+                    </div>
+                </div>
+                <div class="blob"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner">
+        <div class="container banner-flex">
+            <div class="promo-item">
+                <span class="icon">✨</span>
+                <span class="text">Gratis Packaging Lucu</span>
+            </div>
+            <div class="promo-item">
+                <span class="icon">🌿</span>
+                <span class="text">Handmade with Warmth</span>
+            </div>
+            <div class="promo-item">
+                <span class="icon">🏷️</span>
+                <span class="text">Diskon Spesial Hari Ini</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gelang Section -->
+    <section id="gelang" class="section">
+        <div class="container text-center">
+            <h2 class="section-title">Koleksi Gelang Terfavorit</h2>
+            <p class="section-subtitle">Pilih aksesoris yang paling cocok dengan gaya aesthetic-mu</p>
+            
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="best-seller-tag"><i class="fa-solid fa-star"></i> Best Seller</div>
+                    <div class="product-images">
+                        <div class="img-box"><img src="gelang mutiara 1.jpeg" alt="Gelang Mutiara 1"></div>
+                        <div class="img-box"><img src="gelang mutiara 2.jpeg" alt="Gelang Mutiara 2"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="info-head">
+                            <h3>Gelang Mutiara</h3>
+                            <span class="price">Rp6.000</span>
+                        </div>
+                        <div class="color-options">
+                            <p class="label">Pilihan Warna:</p>
+                            <div class="tags">
+                                <span class="tag">Merah Muda</span>
+                                <span class="tag">Biru</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-order" onclick="addToCart('Gelang Mutiara', 6000, 'gelang mutiara 1.jpeg')">Tambah ke Keranjang <i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="best-seller-tag"><i class="fa-solid fa-star"></i> Best Seller</div>
+                    <div class="product-images">
+                        <div class="img-box"><img src="gelang kerang 1.jpeg" alt="Gelang Kerang 1"></div>
+                        <div class="img-box"><img src="gelang kerang 2.jpeg" alt="Gelang Kerang 2"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="info-head">
+                            <h3>Gelang Kerang</h3>
+                            <span class="price">Rp10.000</span>
+                        </div>
+                        <div class="color-options">
+                            <p class="label">Pilihan Warna:</p>
+                            <div class="tags">
+                                <span class="tag">Biru</span>
+                                <span class="tag">Putih</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-order" onclick="addToCart('Gelang Kerang', 10000, 'gelang kerang 1.jpeg')">Tambah ke Keranjang <i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="best-seller-tag"><i class="fa-solid fa-star"></i> Best Seller</div>
+                    <div class="product-images">
+                        <div class="img-box"><img src="gelang bunga 1.jpeg" alt="Gelang Bunga 1"></div>
+                        <div class="img-box"><img src="gelang bunga 2.jpeg" alt="Gelang Bunga 2"></div>
+                    </div>
+                    <div class="product-info">
+                        <div class="info-head">
+                            <h3>Gelang Bunga</h3>
+                            <span class="price">Rp8.000</span>
+                        </div>
+                        <div class="color-options">
+                            <p class="label">Pilihan Warna:</p>
+                            <div class="tags">
+                                <span class="tag">Tangkai Hijau Merah Marun</span>
+                                <span class="tag">Tangkai Pink Bunga Merah Muda</span>
+                            </div>
+                        </div>
+                        <button class="btn btn-order" onclick="addToCart('Gelang Bunga', 8000, 'gelang bunga 1.jpeg')">Tambah ke Keranjang <i class="fa-solid fa-cart-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ganci Section -->
+    <section id="ganci" class="section alt-bg">
+        <div class="container">
+            <div class="section-header-flex">
+                <div>
+                    <h2 class="title-italic">Ganci Aesthetic Collection</h2>
+                    <p class="section-subtitle">Tampilan manis untuk tas atau kunci favoritmu</p>
+                </div>
+                <span class="big-price">Harga: Rp10.000</span>
+            </div>
+
+            <div class="ganci-grid">
+                <div class="ganci-card">
+                    <div class="ganci-img-box">
+                        <img src="gunci cream.jpeg" alt="Ganci Coklat">
+                    </div>
+                    <div class="ganci-content">
+                        <h4>Aesthetic Charm</h4>
+                        <p class="ganci-price">Harga: Rp10.000</p>
+                        <div class="ganci-details">
+                            <div class="detail-row">
+                                <span class="label">Warna Produk:</span>
+                                <span class="tag-filled">Coklat</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Tersedia juga:</span>
+                                <div class="tags-outline">
+                                    <span>Cream</span>
+                                    <span>Hitam</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('Ganci Aesthetic - Coklat', 10000, 'gunci cream.jpeg')">Tambah <i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="ganci-card">
+                    <div class="ganci-img-box">
+                        <img src="gunci pink.jpeg" alt="Ganci Pink">
+                    </div>
+                    <div class="ganci-content">
+                        <h4>Aesthetic Charm</h4>
+                        <p class="ganci-price">Harga: Rp10.000</p>
+                        <div class="ganci-details">
+                            <div class="detail-row">
+                                <span class="label">Warna Produk:</span>
+                                <span class="tag-filled">Pink</span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="label">Tersedia juga:</span>
+                                <div class="tags-outline">
+                                    <span>Cream</span>
+                                    <span>Hitam</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('Ganci Aesthetic - Pink', 10000, 'gunci pink.jpeg')">Tambah <i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Section -->
+    <section id="custom" class="section">
+        <div class="container">
+            <div class="custom-card">
+                <div class="custom-col">
+                    <h2>Custom Aksesoris <br>Sesuai Gayamu</h2>
+                    <p>Ekspresikan kepribadianmu dengan gelang atau gantungan kunci yang dirancang khusus hanya untukmu. Kami melayani berbagai request spesial.</p>
+                    <ul class="custom-list">
+                        <li><i class="fa-solid fa-palette"></i> Bebas pilih warna & kombinasi beads</li>
+                        <li><i class="fa-solid fa-ruler-combined"></i> Ukuran disesuaikan (untuk gelang)</li>
+                        <li><i class="fa-solid fa-key"></i> Custom Ganci: Bebas pilih warna</li>
+                    </ul>
+                    <a href="https://wa.me/6287801005291?text=Halo%20Knott%C3%A9%2C%20saya%20ingin%20melakukan%20pemesanan%20custom%20aksesoris%20(gelang/ganci)%20dengan%20desain%20sendiri." target="_blank" class="btn btn-primary"><i class="fa-brands fa-whatsapp"></i> Custom via WhatsApp</a>
+                </div>
+                <div class="custom-col grid-images">
+                    <img src="gelang bunga 1.jpeg" alt="Custom 1">
+                    <img src="gelang kerang 1.jpeg" alt="Custom 2" class="offset-y">
+                    <img src="gelang mutiara 1.jpeg" alt="Custom 3">
+                    <img src="gunci pink.jpeg" alt="Custom 4" class="offset-y">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Brand -->
+    <section id="about" class="section quote-bg">
+        <div class="container text-center max-w-small">
+            <h5 class="brand-subtitle">Tentang Knotté</h5>
+            <p class="quote">“Knotté menghadirkan aksesoris handmade aesthetic dengan desain feminin dan elegan untuk menemani gaya dan momen spesialmu.”</p>
+            <div class="badge-certified">
+                <span class="line"></span>
+                <span class="badge-text"><i class="fa-solid fa-circle-check"></i> Terverifikasi Handmade</span>
+                <span class="line"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-bg">
+        <div class="container">
+            <h2 class="section-title text-center">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">Bagaimana cara custom gelang? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Kamu bisa klik tombol 'Custom via WhatsApp' dan kirimkan referensi warna atau desain yang kamu inginkan. Tim kami akan membantumu memilih kombinasi beads yang pas!</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Berapa lama pengiriman? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Proses pembuatan handmade biasanya 1-2 hari kerja. Pengiriman tergantung lokasi kamu, estimasi 2-4 hari kerja.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Bahan apa yang digunakan? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Kami menggunakan beads berkualitas tinggi, mutiara sintetis premium, dan benang elastis yang kuat serta tahan lama.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Apakah bisa retur barang? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Retur hanya berlaku jika barang yang diterima rusak atau tidak sesuai pesanan, dengan menyertakan video unboxing maksimal 24 jam setelah barang diterima.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Apakah bisa custom desain? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Tentu! Kamu bisa request warna atau model tertentu untuk gelang maupun gantungan kunci (keychain). Chat saja admin via WhatsApp untuk konsultasi desain custom kamu.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Bagaimana cara merawat aksesoris Knotté? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer">Hindari terkena air dalam jangka waktu lama, parfum, atau bahan kimia keras agar warna beads tetap cantik. Simpan di tempat yang kering saat tidak digunakan.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Map Section -->
+    <section class="section map-section">
+        <div class="container">
+            <h2 class="section-title text-center">Lokasi Kami</h2>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3945.143714652233!2d116.0895433!3d-8.5922721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dcdbf7ed05603ab%3A0x6b5771dd5cbe0d20!2sUniversitas%20Teknologi%20Mataram!5e0!3m2!1sid!2sid!4v1714633000000!5m2!1sid!2sid" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="text-center mt-20">
+                <a href="https://www.google.com/maps/place/Universitas+Teknologi+Mataram/@-8.5922721,116.0895433,17z/data=!3m1!4b1!4m6!3m5!1s0x2dcdbf7ed05603ab:0x6b5771dd5cbe0d20!8m2!3d-8.5922774!4d116.0921182!16s%2Fg%2F11b6zp_zk8?hl=id" target="_blank" class="btn btn-secondary">
+                    <i class="fa-solid fa-location-arrow"></i> Petunjuk Arah via Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo footer-logo">
+                    <img src="/logo.jpeg" alt="Knotté Logo">
+                    <span>Knotté</span>
+                </a>
+                <p>Menciptakan keindahan dalam setiap simpul. Knotté menghadirkan aksesoris yang menceritakan gaya unikmu.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com/luxe.alesttri/" target="_blank" class="ig-btn"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.google.com/maps/place/Universitas+Teknologi+Mataram/@-8.5922774,116.0921182,17z" target="_blank" class="map-btn"><i class="fa-solid fa-map-location-dot"></i></a>
+                    <a href="https://wa.me/6287801005291" target="_blank" class="wa-btn"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h6>Hubungi Kami</h6>
+                <ul class="contact-list">
+                    <li><a href="https://instagram.com/luxe.alesttri/" target="_blank"><i class="fa-brands fa-instagram"></i> @luxe.alesttri</a></li>
+                    <li><a href="https://wa.me/6287801005291" target="_blank"><i class="fa-brands fa-whatsapp"></i> +62 878-0100-5291</a></li>
+                    <li><a href="mailto:luckyalestari@luckyalestari05.com"><i class="fa-regular fa-envelope"></i> luckyalestari@luckyalestari05.com</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h6>Bantuan</h6>
+                <ul>
+                    <li><a href="#" id="orderGuideLink">Cara Pemesanan</a></li>
+                    <li><a href="#" id="shippingGuideLink">Pengiriman</a></li>
+                    <li><a href="#" id="returnPolicyLink">Kebijakan Retur</a></li>
+                    <li><a href="#" id="sizeGuideLink">Panduan Ukuran</a></li>
+                    <li><a href="#" id="faqLink">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Knotté. Seluruh Hak Cipta Dilindungi.</p>
+            <div class="legal-links">
+                <a href="#">Kebijakan Privasi</a>
+                <a href="#">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Size Guide Modal -->
+    <div id="sizeGuideModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-modal" id="closeSizeModal">&times;</span>
+            <h3>Panduan Ukuran</h3>
+            <p>Berikut adalah panduan standar ukuran gelang Knotté:</p>
+            <div class="size-table">
+                <div class="size-row"><strong>S:</strong> 14 - 15 cm</div>
+                <div class="size-row"><strong>M:</strong> 16 - 17 cm (Standar)</div>
+                <div class="size-row"><strong>L:</strong> 18 - 19 cm</div>
+                <div class="size-row"><strong>XL:</strong> 20+ cm</div>
+            </div>
+            <p class="mt-20"><small>*Ukur lingkar pergelangan tanganmu menggunakan pita meteran atau benang lalu ukur di penggaris.</small></p>
+        </div>
+    </div>
+
+    <!-- Order FAQ Modal -->
+    <div id="orderGuideModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-modal" id="closeOrderModal">&times;</span>
+            <h3>Cara Pemesanan</h3>
+            <ol class="help-list">
+                <li>Pilih produk yang kamu inginkan di katalog kami.</li>
+                <li>Pilih warna/variasi yang tersedia.</li>
+                <li>Klik "Tambah ke Keranjang".</li>
+                <li>Buka keranjang belanjamu (ikon tas di pojok kanan atas).</li>
+                <li>Klik "Checkout via WhatsApp" untuk mengirim detail pesanan ke admin kami.</li>
+                <li>Admin akan memberitahu total biaya dan detail pembayaran.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Shipping Modal -->
+    <div id="shippingModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-modal" id="closeShippingModal">&times;</span>
+            <h3>Informasi Pengiriman</h3>
+            <ul class="help-list">
+                <li><strong>Waktu Proses:</strong> Pesanan dikerjakan 1-2 hari kerja setelah pembayaran dikonfirmasi (karena semua produk handmade).</li>
+                <li><strong>Kurir:</strong> Kami menggunakan jasa ekspedisi J&T, JNE, dan SiCepat.</li>
+                <li><strong>Estimasi Sampai:</strong> 2-4 hari kerja tergantung lokasi pengiriman.</li>
+                <li><strong>Nomor Resi:</strong> Akan dikonfirmasi melalui WhatsApp maksimal H+1 setelah pengiriman.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Return Policy Modal -->
+    <div id="returnPolicyModal" class="help-modal">
+        <div class="help-modal-content">
+            <span class="close-modal" id="closeReturnModal">&times;</span>
+            <h3>Kebijakan Retur</h3>
+            <p>Kami memastikan setiap produk dicek sebelum dikirim. Namun jika terjadi kendala:</p>
+            <ul class="help-list">
+                <li>Wajib menyertakan <strong>Video Unboxing</strong> tanpa terputus.</li>
+                <li>Retur berlaku untuk barang rusak (putus/beads pecah) atau salah kirim variasi.</li>
+                <li>Klaim maksimal 1x24 jam setelah status paket diterima.</li>
+                <li>Kami akan mengganti dengan produk baru atau refund jika stok habis.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ Modal -->
+    <div id="faqModal" class="help-modal">
+        <div class="help-modal-content" style="max-width: 600px;">
+            <span class="close-modal" id="closeFaqModal">&times;</span>
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-modal-list" style="max-height: 400px; overflow-y: auto; padding-right: 10px;">
+                <div class="faq-modal-item" style="margin-bottom: 20px;">
+                    <p><strong>Apakah bisa custom desain?</strong><br>
+                    Tentu! Kamu bisa request warna atau model tertentu untuk gelang maupun gantungan kunci (keychain). Chat saja admin via WhatsApp untuk konsultasi desain custom kamu.</p>
+                </div>
+                <div class="faq-modal-item" style="margin-bottom: 20px;">
+                    <p><strong>Berapa lama pengiriman?</strong><br>
+                    Proses pembuatan handmade biasanya 1-2 hari kerja. Pengiriman tergantung lokasi kamu, estimasi 2-4 hari kerja.</p>
+                </div>
+                <div class="faq-modal-item" style="margin-bottom: 20px;">
+                    <p><strong>Bahan apa yang digunakan?</strong><br>
+                    Kami menggunakan beads berkualitas tinggi, mutiara sintetis premium, dan benang elastis yang kuat serta tahan lama.</p>
+                </div>
+                <div class="faq-modal-item" style="margin-bottom: 20px;">
+                    <p><strong>Apakah bisa retur barang?</strong><br>
+                    Retur hanya berlaku jika barang yang diterima rusak atau tidak sesuai pesanan, dengan menyertakan video unboxing.</p>
+                </div>
+                <div class="faq-modal-item" style="margin-bottom: 20px;">
+                    <p><strong>Metode pembayaran apa saja?</strong><br>
+                    Kami menerima transfer via bank (BCA, Mandiri, BNI) dan E-Wallet (OVO, GoPay, Dana, ShopeePay).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script triggers icons -->
+    <script src="script.js"></script>
+</body>
+</html>
